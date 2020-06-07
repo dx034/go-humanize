@@ -54,9 +54,9 @@ func Commaf(v float64, decPoint, thousandsSep string) string {
 		v = 0 - v
 	}
 
-	comma := []byte{byte(decPoint[0])}
+	comma := []byte{byte(thousandsSep[0])}
 
-	parts := strings.Split(strconv.FormatFloat(v, 'f', -1, 64), ".")
+	parts := strings.Split(strconv.FormatFloat(v, 'f', 2, 64), ".")
 	pos := 0
 	if len(parts[0])%3 != 0 {
 		pos += len(parts[0]) % 3
